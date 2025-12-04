@@ -1,0 +1,637 @@
+/* ================================================
+   1) FONT IMPORT — FUTURA REGULAR & BOLD
+   ================================================= */
+@font-face {
+  font-family: 'Futura';
+  src: url('FuturaCyrillicBook.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('FuturaCyrillicBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================
+   2) RESET & GLOBAL
+   ================================================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Futura', system-ui, sans-serif;
+  font-weight: 400;
+  background: #fdf7ec;
+  color: #111827;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+}
+
+/* Heading default */
+h1, h2, h3, h4 {
+  font-family: 'Futura', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+/* ================================================
+   3) HEADER
+   ================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6vw;
+  background: rgba(253, 247, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-mark {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffb300, #ff5c7b);
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 700;
+  font-size: 0.9rem;
+  position: relative;
+  letter-spacing: 0.04em;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 0;
+  height: 2px;
+  background: #111827;
+  transition: width 0.2s;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* ================================================
+   4) PANEL GLOBAL
+   ================================================= */
+.panel {
+  padding: 4rem 6vw;
+}
+
+.panel + .panel {
+  margin-top: 1.5rem;
+}
+
+.panel-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ================================================
+   5) HERO PANEL BARU (BACKGROUND LAUT)
+   ================================================= */
+.panel-hero {
+  position: relative;
+  min-height: calc(100vh - 80px); /* kira2 setinggi layar - tinggi header */
+  padding: 6rem 6vw;
+  display: flex;
+  align-items: center;
+
+  /* ganti URL ini dengan gambar laut kamu */
+  background-image: url("background\ home.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* overlay gelap tipis biar teks kebaca */
+.panel-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.55)
+  );
+  z-index: 0;
+}
+
+/* wrapper teks */
+.hero-main {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  padding: 4rem 0;
+}
+
+/* tag kecil "KELOMPOK 3 • DATA • POWER BI" */
+.hero-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: #00a89d;
+  color: #ffffff;
+  border-radius: 999px;
+}
+
+/* judul besar */
+.panel-hero h1,
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+/* subjudul */
+.hero-subtitle,
+.hero-desc {
+  font-size: 0.95rem;
+  max-width: 28rem;
+  color: #ecfeff;
+  margin-bottom: 1.7rem;
+}
+
+/* tombol GET STARTED */
+.hero-button,
+.btn-primary {
+  background: linear-gradient(135deg, #00c4ff, #00d47f);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.7rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-button:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .panel-hero {
+    padding: 5.5rem 1.5rem 3rem;
+  }
+}
+
+/* ================================================
+   6) HERO CARD
+   ================================================= */
+.hero-card {
+  background: #151515;
+  color: #fff;
+  border-radius: 20px;
+  padding: 1.3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background-image:
+    radial-gradient(circle at 10% 20%, #ffb300 0, transparent 60%),
+    radial-gradient(circle at 80% 0, #ff5c7b 0, transparent 60%),
+    radial-gradient(circle at 40% 100%, #58ccff 0, transparent 55%);
+  opacity: .6;
+  mix-blend-mode: screen;
+}
+
+.hero-card-header,
+.hero-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.chip-green { background: #16a34a; }
+.chip-purple { background: #9333ea; }
+
+.hero-card-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.hero-card-text {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: #e5e7eb;
+}
+
+.hero-card-footer {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(255,255,255,0.35);
+}
+
+/* ================================================
+   7) POWER BI PANEL
+   ================================================= */
+#powerbi {
+  position: relative;
+  
+  background-image: url("dashboard\ bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#powerbi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* overlay gelap */
+  z-index: 0;
+}
+
+#powerbi > * {
+  position: relative;
+  z-index: 1;
+}
+
+#powerbi h2 {
+  color: #ffffff;
+}
+
+#powerbi p {
+  color: #e5e7eb;
+}
+
+.panel-powerbi {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 0px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.powerbi-frame-wrapper {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.powerbi-frame-wrapper iframe {
+  width: 100%;
+  height: 480px;
+  border: none;
+}
+
+/* ================================================
+   8) FUN FACT CARDS
+   ================================================= */
+.card-grid {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+}
+
+.info-card {
+  padding: 1.2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  color: #111;
+  position: relative;
+}
+
+.info-card h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.info-card-tag {
+  margin-top: 0.8rem;
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Variasi warna */
+.info-card-yellow { background: linear-gradient(135deg, #fbbf24, #fb923c); }
+.info-card-orange { background: linear-gradient(135deg, #fb923c, #f97316); }
+.info-card-green  { background: linear-gradient(135deg, #4ade80, #22c55e); }
+.info-card-pink   { background: linear-gradient(135deg, #fb7185, #f97316); }
+
+/* ================================================
+   9) ABOUT PANEL
+   ================================================= */
+.panel-about {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.04);
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Judul "About Us" */
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+/* Blok "Tentang Project Kami" */
+.about-text {
+  max-width: 520px;
+  text-align: left;
+  margin: 0 auto 2.5rem 0; /* nempel ke kiri, tapi masih dalam panel */
+}
+
+.about-text h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Bagian Our Team */
+.about-team {
+  text-align: center;
+}
+
+.about-team-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid foto tim */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Card anggota */
+.team-card {
+  text-align: center;
+}
+
+/* Foto bulat */
+.team-photo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 0.8rem;
+  background: #e5e7eb;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nama & NIM */
+.team-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.team-id {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+  .about-text {
+    margin: 0 0 2rem 0;
+  }
+
+  .team-photo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.about-meta li {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ================================================
+   10) FOOTER
+   ================================================= */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ================================================
+   11) FADE-UP ANIMATION
+   ================================================= */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s ease-out, transform .7s ease-out;
+}
+
+.fade-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================
+   12) RESPONSIVE
+   ================================================= */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .powerbi-frame-wrapper iframe {
+    height: 360px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === MULTI-WINDOW BEHAVIOR === */
+
+/* SEMUA panel disembunyikan dulu */
+.panel {
+  display: none;
+}
+
+/* HANYA panel yang aktif yang ditampilkan */
+.panel.active-panel {
+  display: block;
+}
+
+/* Kalau kamu pakai animasi fade-section */
+.fade-section {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Tambahan: kalau panel aktif & dia fade-section, paksa kelihatan */
+.panel.active-panel.fade-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nav link aktif */
+.main-nav a.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ================================================
+   SCROLL FADE-UP ANIMATION PER ELEMEN
+   ================================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* ketika elemen sudah masuk viewport */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional: delay untuk elemen berurutan */
+.fade-delay-1 {
+  transition-delay: 0.2s;
+}
+
+.fade-delay-2 {
+  transition-delay: 0.5s;
+}
+
+.fade-delay-3 {
+  transition-delay: 0.8s;
+}
+
+.fade-delay-4 {
+  transition-delay: 1.1s;
+}
+
+/* ======= HOME VIDEO BACKGROUND ======= */
+
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video full-background */
+.home-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay gelap tipis */
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* tambah/kurangi opacity sesuai selera */
+  z-index: 1;
+}
+
+/* Konten hero tampil di atas video + overlay */
+#home .hero-main {
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seaweed Tracker</title>
+
+  <!-- Google Font (bisa ganti suka-suka) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <!-- Ganti teks ini dengan logo PNG/SVG kamu -->
+      <span class="logo-mark">TIK</span>
+      <span class="logo-text">SEAWEED TRACKER</span>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#powerbi">Dashboard</a>
+      <a href="#funfacts">Summary</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PANEL 1: HERO / INTRO -->
+    <section id="home" class="panel panel-hero fade-section">
+      <!-- Background video -->
+      <video class="home-bg-video" autoplay muted playsinline loop>
+        <source src="new backgorund.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Overlay gelap biar teks kebaca -->
+      <div class="home-overlay"></div>
+
+      <!-- Konten Hero -->
+      <div class="hero-main fade-up">
+        <p class="hero-tag fade-up fade-delay-1">KELOMPOK 3 • DATA • POWER BI</p>
+
+        <h1 class="hero-title fade-up fade-delay-2">
+          Pengaruh Cahaya Terhadap<br>
+          Pertumbuhan Seaweed
+        </h1>
+
+        <p class="hero-subtitle fade-up fade-delay-3">
+        Website ini memberikan infografis pertumbuhan Seaweed terhadap cahaya,
+        dengan report dari pengolahan Power BI.
+        </p>
+
+        <button 
+        class="hero-button btn-primary fade-up fade-delay-4">GET STARTED →
+        </button>
+      </div>
+    </section>
+
+    <!-- PANEL 2: POWER BI -->
+    <section id="powerbi" class="panel panel-powerbi">
+      <div class="panel-inner">
+        <div class="panel-header fade-up fade-delay-1">
+          <h2>Dashboard</h2>
+          <p>
+          Report dari pengolahan data dengan Power BI mengenai pertumbuhan Seaweed di wilayah yang berbeda
+          </p>
+        </div>
+
+        <div class="powerbi-frame-wrapper fade-up fade-delay-2">
+          <!-- Ganti src dengan embed URL Power BI kamu -->
+          <iframe
+          title="Power BI Sample"
+          src="https://app.powerbi.com/view?r=YOUR_EMBED_URL"
+          frameborder="0"
+          allowfullscreen="true">
+         </iframe>
+        </div>
+
+        <!-- Catatan juga ikut fade up -->
+        <p class="panel-note fade-up fade-delay-3">
+          *Sumber data dari Keggle
+        </p>
+
+      </div>
+    </section>
+
+    <!-- PANEL 3: FUN FACTS / HERO CARDS GRID -->
+    <section id="funfacts" class="panel panel-funfacts fade-section">
+      <div class="panel-inner">
+        <div class="panel-header">
+          <h2>Summary</h2>
+          <p>
+            Kesimpulan singkat dari hasil analisis.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Card 1 -->
+          <article class="info-card info-card-yellow fade-up fade-delay-1">
+            <h3>Jejak Kupu-kupu</h3>
+            <p>
+              Struktur sayap kupu-kupu digunakan sebagai inspirasi cat mobil
+              yang bisa berubah warna tanpa pigmen tambahan.
+            </p>
+            <span class="info-card-tag">Bio-Color</span>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="info-card info-card-orange fade-up fade-delay-2">
+            <h3>Bangunan Termit</h3>
+            <p>
+              Sistem ventilasi gundukan rayap menginspirasi desain gedung hemat energi
+              tanpa AC konvensional.
+            </p>
+            <span class="info-card-tag">Eco-Architecture</span>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="info-card info-card-green fade-up fade-delay-3">
+            <h3>Daun Teratai</h3>
+            <p>
+              Efek daun teratai melahirkan teknologi cat & coating
+              yang super hidrofobik dan mudah dibersihkan.
+            </p>
+            <span class="info-card-tag">Self-Cleaning</span>
+          </article>
+
+          <!-- Card 4 (contoh tambahan) -->
+          <article class="info-card info-card-pink fade-up fade-delay-4">
+            <h3>Hi-Tech Hutan</h3>
+            <p>
+              Pola jaringan akar dan jamur (mycorrhiza) menginspirasi arsitektur
+              jaringan informasi terdistribusi.
+            </p>
+            <span class="info-card-tag">Network</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL 4: ABOUT US -->
+    <section id="about" class="panel panel-about">
+      <div class="panel-inner about-section">
+
+        <!-- Judul utama -->
+        <header class="about-header fade-up fade-delay-1">
+          <h2 class="about-title">About Us</h2>
+        </header>
+
+        <!-- Deskripsi project -->
+        <div class="about-text fade-up fade-delay-2">
+          <h3>Tentang Project Kami</h3>
+          <p>
+            Project ini merupakan project akhir dari mata kuliah Teknologi
+            Informatika dan Komputasi TIN 1215. Project ini mengharapkan
+            mahasiswa dapat membuat/mengelola website sendiri dan mengolah
+            data Excel dengan Power BI.
+          </p>
+        </div>
+
+        <!-- Bagian tim -->
+        <section class="about-team fade-up fade-delay-3">
+          <h3 class="about-team-title">Our Team</h3>
+
+          <div class="team-grid">
+            <!-- Anggota 1 -->
+            <article class="team-card">
+              <div class="team-photo">
+                <img src="man 1.jpeg" alt="Nama 1">
+              </div>
+              <h4 class="team-name">Fachry Rizqi Amada</h4>
+              <p class="team-id">F3401241067</p>
+            </article>
+
+            <!-- Anggota 2 -->
+            <article class="team-card">
+              <div class="team-photo">
+                <img src="man 2.jpeg" alt="Nama 2">
+              </div>
+              <h4 class="team-name">Ferdy Rizky Firdaus M.</h4>
+              <p class="team-id">F3401241121</p>
+            </article>
+
+            <!-- Anggota 3 -->
+            <article class="team-card">
+              <div class="team-photo">
+                <img src="man 3.jpeg" alt="Nama 3">
+              </div>
+              <h4 class="team-name">Arvazaim Abdillah Nurdin</h4>
+              <p class="team-id">F3401241123</p>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p1>
+      Teknologi Informatika dan Komputasi<br>
+    </p1>
+    <p2>
+      Departemen Teknologi Industri Pertanian<br>
+    </p2>
+    <p3>
+      Fakultas Teknologi Pertanian<br>
+    </p3>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
